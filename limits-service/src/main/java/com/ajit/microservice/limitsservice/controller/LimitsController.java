@@ -10,7 +10,7 @@ public class LimitsController {
 	
 	@GetMapping("/limits")
 	public Limits retrieveLimits() {
-		return new Limits(1,100);
+		return new Limits(1,1000);
 	}
 
 }
