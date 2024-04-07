@@ -1,0 +1,11 @@
+package com.ajit.microservice.limitsservice.controller;
+
+@RestController
+public class LimitsController {
+	
+	@GetMapping("/limits")
+	public Limits retrieveLimits() {
+		
+	}
+
+}
