@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ajit.microservices.currencyexchangeserver.CurrencyExchange;
+import com.ajit.microservices.currencyexchangeserver.repositories.CurrencyExchangeRepository;
 
 @RestController
-public class CurrencyExchangeController {
+public class CurrencyExchangeController{
+	
+	@Autowired
+	private CurrencyExchangeRepository currencyExchangeRepo;
 	
 	@Autowired
 	private Environment environment;
@@ -21,8 +25,12 @@ public class CurrencyExchangeController {
 			@PathVariable String from,
 			@PathVariable String to) {
 		
-		CurrencyExchange currencyExchange = new CurrencyExchange(1l,"USD","INR",BigDecimal.valueOf(76));
-	
+//		CurrencyExchange currencyExchange = new CurrencyExchange(1l,"USD","INR",BigDecimal.valueOf(76));
+
+		CurrencyExchange currencyExchange = currencyExchangeRepo.findByFromAndTo(from, to);
+		if(currencyExchange == null) {
+			throw new RuntimeException("unable to find data from repo");
+		}
 		String port = environment.getProperty("local.server.port");
 		currencyExchange.setEnvironment(port);
 		
