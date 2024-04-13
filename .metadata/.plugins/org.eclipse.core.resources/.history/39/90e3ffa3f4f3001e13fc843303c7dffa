@@ -1,5 +1,0 @@
-package com.ajit.microservice.limitsservice.beans;
-
-public class Limits {
-
-}
