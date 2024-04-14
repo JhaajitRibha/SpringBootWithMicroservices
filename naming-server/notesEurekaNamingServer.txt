@@ -1,0 +1,5 @@
+Netflix Eureka is a service discovery server and client library.
+It is part of Netflix's open-source suite of tools for building 
+microservices architectures. Eureka allows services to register 
+themselves with the registry and discover other services in the system.
+This helps in achieving resilience,load balancing, and dynamic routing in a microservices environment.

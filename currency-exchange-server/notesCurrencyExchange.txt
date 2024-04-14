@@ -1,0 +1,18 @@
+This configuration setting specifies the URL of the Eureka server's registry.
+ Let's break it down:
+
+eureka.client.serviceUrl.defaultZone: This is a property specific to the Eureka client 
+configuration. It defines the URL where the Eureka client should find the Eureka server's registry.
+
+http://localhost:8761/eureka: This is the URL of the Eureka server's registry.
+ Here, it's specified as http://localhost:8761/eureka, 
+ which means that the Eureka server is expected to be running 
+ locally on the same machine as the client, 
+ and it's accessible via port 8761. 
+ The /eureka path is the default context path where 
+ Eureka's REST endpoints are exposed.
+
+In summary, this configuration setting tells the Eureka 
+client where to find the Eureka server's registry so that 
+it can register itself and discover other services within 
+the microservices architecture.
