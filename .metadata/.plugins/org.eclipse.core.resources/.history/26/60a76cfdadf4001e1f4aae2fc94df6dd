@@ -1,5 +1,0 @@
-package com.ajit.microservice.limitsservice.configurations;
-
-public class LimitConfigurations {
-
-}
